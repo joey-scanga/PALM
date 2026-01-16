@@ -30,7 +30,7 @@
 # can be expensive, or may bother other users in a network if the number of
 # licenses available is limited), is slower to load, but runs faster
 # once loaded. In the variable below, use 1 for Octave, 2 for Matlab:
-WHICH_TO_RUN=1
+WHICH_TO_RUN=2
 
 # If Octave isn't in the path, or to use a specific version, add here the
 # path or command that invokes the Octave executable binary.
@@ -42,7 +42,7 @@ OCTAVEBIN=/opt/local/bin/octave
 # If Matlab isn't in the path, or to use a specific version, add here the
 # path or command that invokes the Matlab executable binary.
 # This only has effect if WHICH_TO_RUN above os set as 2.
-MATLABBIN=/opt/r16b/bin/matlab
+MATLABBIN=/opt/MATLAB/R2021a/bin/matlab
 #MATLABBIN=/Applications/MATLAB_R2023a.app/bin/matlab
 
 # If you are intending to run PALM in a cluster, for some environments
@@ -57,7 +57,7 @@ TEMP_DIR=/tmp
 # e.g. set to the value of SLURM_NPROCS
 # If OMP_NUM_THREADS is not set then default to MATLAB's 'automatic' 
 # determination of number of threads.
-USE_OMP_THREADS=0
+USE_OMP_THREADS=8
 if [[ ${USE_OMP_THREADS} -eq 1 ]] && [[ -z ${OMP_NUM_THREADS} ]]; then
   OMP_NUM_THREADS="'automatic'"
 fi
