@@ -147,7 +147,7 @@ switch lower(readwith)
         % If the original data is a GIFTI file.
         S.data  = mask;
         S.extra = extra;
-        S.extra.data = S.extra.data(1);
+        S.extra.data = S.extra.gifti.cdata;
 
     otherwise
         error('Unknown format: %s',readwith);

@@ -257,7 +257,7 @@ switch lower(X.readwith)
                 gii.mat = X.extra.mat';
             end
         else
-            gii.cdata = X.data';
+            gii=gifti(X.data');
         end
         if isfield(X.extra.gifti,'data') && ...
                 ~isempty(X.extra.data) && ...
