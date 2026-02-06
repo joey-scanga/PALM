@@ -142,6 +142,7 @@ elif [[ ${WHICH_TO_RUN} -eq 2 ]] ; then
    fi
    SED_STR='1,/^.......................................................................$/ d'
    if [[ ${IS_CLUSTER} -eq 0 ]] ; then
+     echo Running ${MATLABCMD} ${ML_OPTS} -r "${RUNCMD}" | sed ${SEDOPT} -e "$SED_STR"
      ${MATLABCMD} ${ML_OPTS} -r "${RUNCMD}" | sed ${SEDOPT} -e "$SED_STR"
    else
      ${MATLABCMD} ${ML_OPTS} < "${RUNCMD}" | sed ${SEDOPT} -e "$SED_STR"
