@@ -2451,11 +2451,11 @@ else
     end
     if isvector(plm.EB)
         if opts.within && opts.whole % within + whole block shuffling
-            plm.EB = [+ones(plm.N,1) +plm.EB(:) (1:plm.N)'];
+            plm.EB = [+ones(plm.N,1), +str2double(plm.EB(:)), (1:plm.N)'];
         elseif opts.whole             % whole-block shuffling
-            plm.EB = [+ones(plm.N,1) -plm.EB(:) (1:plm.N)'];
+            plm.EB = [+ones(plm.N,1), -str2double(plm.EB(:)), (1:plm.N)'];
         else                          % within-block shuffling (this is the default, and not meant to be changed)
-            plm.EB = [-ones(plm.N,1) +plm.EB(:) (1:plm.N)'];
+            plm.EB = [-ones(plm.N,1), +str2double(plm.EB(:)), (1:plm.N)'];
         end
     elseif opts.within || opts.whole
         warning([ ...
